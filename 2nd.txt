@@ -1,1 +1,17 @@
 2nd class
+
+CSS 참조방식
+인라인방식 > 내장방식 ? 링크방식
+
+CSS구조
+p{color:red;padding:5px;}
+
+CSS 선택자
+-전체 선택자
+-태그 선택자
+-복합 선택자 > / + / ~(일반형제 선택자) /
+             E::active{}/ E::hover{}/ E::focus{}/ E::vi
+
+복잡한 속성 position
+static
+relative

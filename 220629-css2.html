@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>css연습</title>
+        <style>
+            div {
+                width: 100px;
+                height: 100px;
+                border-radius: 50px; /*원으로 만들어주는 스타일속성*/
+            }
+            .div1{
+                left: 100px;
+                top :20px;
+                background-color: tomato;
+            }
+            .div2{
+                position: absolute;/*절대적으로 위치를 지정*/
+                background-color: aquamarine;
+            }
+            .div3 {
+                position: fixed; 
+                left: 50px;
+                background-color: yellow;
+            }
+            .div4 {
+                position: fixed;
+                left :50px;
+                top: 20px;
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="div1"></div>
+        <div class="div2">
+            <div class="div3"></div>
+        </div>
+        <dib class="div4"></dib>
+    </body>
+</html>

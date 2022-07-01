@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <style>
+            div{
+                width: 100px; height: 100px;
+                background-color: rgb(117, 117, 252);
+                position: relative;
+                animation-name: myanimation;
+                animation-duration: 2s;
+                animation-timing-function: ease-out; /*속도조절 in천천히 out빠르게*/
+                animation-iteration-count: 3;
+            }
+            @keyframes myanimation {
+                0% { left: 0px; }
+                25% { left: 100px; }
+                50% { left: 200px; }
+                75% { left: 300px; }
+                100% { left: 400px; }
+                
+            }
+        </style>
+    </head>
+
+    <body>
+        <div></div>
+    </body>
+</html>

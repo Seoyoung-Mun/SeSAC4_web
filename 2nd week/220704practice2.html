@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>방명록만들기</title>
+        <style>
+            #maintable{ text-align: center;}
+        </style>
+        <script>
+            function enter(){
+                
+                var maintable = document.getElementById(maintable);
+
+                var tr_1 = document.createElement("tr");
+                var td_1 = documet.createElement("td");
+                var td_2 = document.createElement("td");
+                var td_3 = document.createElement("td");
+                var td_4 = document.createElement("td");
+
+                td_1.innerText = count;
+                td_2.innerText = document.getElementsById("name").value;
+                td_3.innerText = document.getElementsById("memo").value;
+                td_4.innerText = Date();
+                
+                
+                
+                
+                
+            }
+        </script>
+    </head>
+
+    <body>
+        <p>방명록 입니다.</p> <br />
+        <div>
+        <p>작 성 자 <input type = "text" di = "name"></p>
+        <p> 내 &nbsp;&nbsp; 용 <input type = "text" di = "memo"></p> <br />
+        <button type = "button" onclick = "enter();">작성</button>
+        </div>
+        <hr>
+
+        <table id = "maintable" border="1" cellspacing="1" cellpadding="10">
+            <tr>
+                <td>번호</td>
+                <td>작성자</td>
+                <td width="100">내용</td>
+                <td>작성일</td>
+            </tr>
+            
+        </table>
+    </body>
+</html>

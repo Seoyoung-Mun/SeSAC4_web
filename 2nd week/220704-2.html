@@ -1,0 +1,32 @@
+<html>
+    <script>
+        //Date
+        var date = new Date(); //초기화 방법
+        console.log( date ); //표준형태(기본형태)
+
+        console.log( date.getFullYear() );
+        console.log( date.getYear() ); 
+        console.log( date.getMonth() ); //인덱스로 나타남 따라서 출력값+1 을 한 개월수로 읽어야함
+        console.log( date.getDate() );
+        console.log( date.getDay() );
+        console.log( date.getTime() );
+        console.log( date.getHours() );
+
+        console.log( "_________________");
+
+        //Math 객체 - 초기화가 필요하지 않은 객체
+        console.log( Math.min() ); //최솟값
+        console.log( Math.min( -10, 1, 2) ); 
+        console.log( Math.min( -10, 2, "문자")); //비교할 수 없는 값(숫자와 문자 등)이 함께 있을때 NaN
+        //max 최댓값
+        console.log( Math.random () ); //0~1 사이의 무작위 수 (소숫점으로 표현)
+        /*
+        var max = 20;
+        var mim = 10;
+        Math.random() * (max - min) + min;
+        */
+
+        console.log( Math.round(-10.9) );
+        console.log( Math.round(11.1) );
+    </script>
+</html>

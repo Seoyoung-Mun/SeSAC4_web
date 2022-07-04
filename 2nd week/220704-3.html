@@ -1,0 +1,25 @@
+<html>
+    <head>
+
+        <title>document</title>
+
+        <script>
+            console.log( document.documentElement ); //문서 안의 모든 요소를 가져옴
+            console.log( document.head );
+            console.log( document.title );
+            console.log( document.body ); 
+            console.log( document.URL );
+            console.log( document.domain ); //도메인 = 사이트의 주소
+        </script>
+
+    </head>
+    
+    <body>
+        <div>
+            <p>안녕</p>
+        </div>
+        <script> //스트립트 태그는 헤드와 바디에 모두 사용이 가능함. 헤드태그는 사용자 눈에 보이기 전에 로드 됨. 사용자 목적에 따라 헤드,바디에 스트립트 태그 사용.
+            console.log( document.body );
+        </script>
+    </body>
+</html>

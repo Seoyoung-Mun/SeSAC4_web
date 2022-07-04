@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object 객체,배열</title>
+    <script>
+//객체
+        var cat = {
+            name : "나비",
+            age : 1,
+            mew: function(){
+                return "야옹";
+            }
+        };
+        console.log( "cat :" + cat );
+        console.log( "cat :", cat ); //객체일땐 쉼표(,)로 이어주는것이 좋음
+        console.log( cat );
+        console.log( cat.name );
+        console.log( cat.mew());
+//배열
+        var arr1 = [1, 2, 3, "a" , "b"];
+        console.log( arr1.length );
+        arr1.push("c"); //push 마지막에 요소를 추가
+        console.log(arr1);
+        arr1.pop(); //pop 가장 마지막에 있는 요소를 제거
+        console.log(arr1); //마지막에 넣은 요소 "c"가 제거됨
+        //nushift 가장 앞에 요소 추가
+        //shift 가장 앞에 요소 제거
+        console.log(arr1.indexOf("a")); //indexOf 입력한 값이 몇번째 배열인지(배열첫번째는 0으로 시작) - 3으로 출력되지만 사실은 네번째에 있는 요소
+//딕셔너리  키-값 형태로 저장
+        var me = {
+            name : 'seoyoung',
+            birth : '0330'
+        };
+        me ['gender'] = 'F';
+        console.log( me['gender']);
+
+        var a = 1;
+        var b = a;
+        console.log( "a : ", a );
+        console.log( "b : ", b );
+        
+        a = 10;
+        console.log( "a : ", a );
+        console.log( "b : ", b ); // a를 바꿨다고 b의 값이 변하진않음을 보여준다 (기본자료형)
+
+        var a1 = [ 1, 2, 3, 4, 5];
+        var a2 = a1;
+        console.log( "a1 : ", a1 );
+        console.log( "a2 : ", a2 );
+        a1.pop(); // [1,2,3,4]
+        console.log( "a1 : ", a1 );
+        console.log( "a2 : ", a2 ); //a1에만 pop을 적용시켰는데 a2까지 적용되었다 (객체자료형)
+        
+/*형 변환 - 문자열로
+        srting(true);
+        
+        a.toString();
+        (false).toString();
+//      - 정수로
+        Number(true) //1
+        Number('10')
+
+        parseInt('10'); */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

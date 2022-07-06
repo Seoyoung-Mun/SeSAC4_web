@@ -32,7 +32,18 @@
         }
     </style>
     <script>
+        var colors = ['red','orange','yellow','green','blue','purple'];
+
         function changeColor(){
+            var now =  $("div").attr("class") ;
+            var i = colors.indexOf(now);
+
+            if ( i == colors.length - 1 ) //마지막 index일때 
+            $("div").switchClass(now,colors[0]);
+            else $("div").switchClass(now, colors[i+1]);
+        }
+
+            /* 쉬운버전
             if($("div").hasClass("red")){
                 $("div").switchClass("red","orange");
             } else if ($("div").hasClass("orange")){
@@ -44,7 +55,9 @@
             } else if($("div").hasClass("blue")){
                 $("div").switchClass("blue","purple");
             }
-        }
+            */
+        
+        //hasClass로 현재 색을 확인 switchClass로 다음 색으로 변경
     </script>
     </head>
     <body>

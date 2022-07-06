@@ -3,57 +3,86 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.min.js" ></script>
         <script src="../jquery-ui-1.13.1.custom/jquery-ui.js"></script>
         <link href="../jquery-ui-1.13.1.custom/jquery-ui.css"> 
-    
+        
+        <style>
+            #sun {
+                color: red;
+            }
+            #sat {
+                color: blue;
+            }
+        </style>
+        <script>
+            
+        </script>
     </head>
     <body>
         <p>날짜 : <input type="number" id="day"></p>
         <p>내용 : <input type="text" id="memo"></p>
         <button type="button" onclick="enter">작성</button>
-        <table>
+        <table cellpadding="20">
             <tr>
-                <td style="color:red;">일</td>
+                <td id="sun">일</td>
                 <td>월</td>
                 <td>화</td>
                 <td>수</td>
                 <td>목</td>
                 <td>금</td>
-                <td style="color:blue;">토</td>
+                <td id="sat">토</td>
             </tr>
             <tr>
-                <td style="color:red;"></td>
+                <td id="sun"></td>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td>1</td>
-                <td style="color:blue;">2</td>
+                <td id="sat">2</td>
             </tr>
             <tr>
-                <td style="color:red;">3</td>
+                <td id="sun">3</td>
                 <td>4</td>
                 <td>5</td>
                 <td>6</td>
                 <td>7</td>
                 <td>8</td>
-                <td style="color:blue;">9</td>
+                <td id="sat">9</td>
             </tr>
             <tr>
-                <td style="color:red;"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td style="color:blue;"></td>
+                <td id="sun">10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td id="sat">16</td>
             </tr>
             <tr>
-                <td style="color:red;"></td>
+                <td id="sun">17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td id="sat">23</td>
+            </tr>
+            <tr>
+                <td id="sun">24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td id="sat">30</td>
+            </tr>
+            <tr>
+                <td id="sun">31</td>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
-                <td style="color:blue;"></td>
+                <td id="sat"></td>
             </tr>
         </table>
     </body>

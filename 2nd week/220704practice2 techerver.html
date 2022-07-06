@@ -17,7 +17,7 @@
                 kan3.innerText = content;
                 var kan4 = document.createElement("td");
                 var date = new Date();
-                console.log( date );
+                //console.log( date ); date 확인용!
                 kan4.innerText = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
                 garo.appendChild(kan1);
                 garo.appendChild(kan2);
@@ -41,7 +41,7 @@
                 <tr>
                     <th>내용</th>
                     <td>
-                        <input type="text" id="content" style="width: 560px;">
+                        <input type="text" id="content" style="width: 150px;">
                     </td>
                 </tr>
                 </table>
@@ -49,18 +49,6 @@
                 <button type="button" onclick="writeNote();">작성</button>
                 <br><br>
                 <table id="table" border="1" cellpadding="10" cellspacing="1">
-                    <tr>
-                        <th>번호</th>
-                        <th>작성자</th>
-                        <th>내용</th>
-                        <th>작성일</th>
-                    </tr>
-                    <tr>
-                        <th>번호</th>
-                        <th>작성자</th>
-                        <th>내용</th>
-                        <th>작성일</th>
-                    </tr>
                     <tr>
                         <th>번호</th>
                         <th>작성자</th>

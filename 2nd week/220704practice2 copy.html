@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>방명록만들기</title>
+
+        <script>
+            var cnt = 1;
+            function a (){
+
+            }
+            function writeNote(){
+                var name = document.getElementById("name").value;
+                var content =document.getElementById("content").value;
+
+                var table = document.getElementById("table");
+                var garo = document.getElementById("td");
+
+                var kan1 = document.createElement("td");
+                kan1.innerText = cut ;
+                cnt = cnt + 1;
+                //kan1.innerText = document.querySelectorAll("#table tr").length;
+                var kan2 = document.createElement("#table td");
+                kan2.innerText = name;
+                var kan3 = document.createElement("td");
+                kan3.innerText = content;
+                
+                var kan4 = document.createElement("td");
+                
+                var date = new Date();
+                console.log( date );
+                kan4.innerText = date.getFullYear()+ "-" + (date.getMonth()+1) + "-" +(date.getDay()+1);
+                //index로 가져와지기 때문에 +1의 값을 해주어야 함.
+
+                garo.appendChild(kan1);
+                garo.appendChild(kan2);
+                garo.appendChild(kan3);
+                table.appendChild(garo);
+
+            }
+        </script>
+    </head>
+
+    <body>
+        <p>방명록 입니다.</p> <br />
+        <div>
+        <p>작 성 자 <input type = "text" ></p>
+        <p> 내 &nbsp;&nbsp; 용 <input type = "text" ></p> <br />
+        <button type = "button" onclick = "writeNote();">작성</button>
+        </div>
+        <hr>
+
+        <table id = "table" border="1" cellspacing="1" cellpadding="10">
+            <thead>
+                <tr>
+                <td>번호</td>
+                <td id="name">작성자</td>
+                <td id="content" width="100">내용</td>
+                <td>작성일</td>
+                </tr>
+            </thead>          
+            <tbody>
+
+            </tbody>
+            
+        </table>
+    </body>
+</html>

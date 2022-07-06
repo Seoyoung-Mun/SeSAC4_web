@@ -3,13 +3,32 @@
         <title>간단 계산기 만들기</title>
         <script>
             function result(){
-                var input1 = Number(document.getElementById("value1").value);
-                var input2 = Number(document.getElementById("value2").value);
+                var input1 = document.getElementById("value1").value; //.value를 써서 값을 가져옴
+                var input2 = document.getElementById("value2").value;
                 var input3 = document.getElementById("operator").value;
 
-                var input4 = document.getElementById("result").value ;
+                input1 = parseInt(input1); //형 변환
+                input2 = parseInt(input2);
 
+                var input4 = document.getElementById("result");
+
+                switch ( input3 ) {
+                    case "+":
+                        input4.value = input1 + input2;
+                    break;
+                    case "-":
+                        input4.value = input1 - input2;
+                    break;
+                    case "*":
+                        input4.value = input1 * input2;
+                    break;
+                    case "/":
+                        input4.value = input1 / input2;
+                    break;
+                }
                 
+            }
+                /*
                 if ( input3 == "+" ){
                     input4 = input1 + input2;
                 } else if ( input3 == "-" ){
@@ -23,13 +42,24 @@
                 var result = document.getElementById("result");
                 result.value = input4;
             }
-            
+                */
             function reset(){
+                var input = document.querySelectorAll("input"); //모든 input태그 선택
+                console.log(inputs);
+                for ( var i = 0; i < inputs.length; i++ ){
+                    var selected = inputs[i];
+                    console.log( selected );
+                    selected.value = "";
+                    //inputs[i].value = "";
+                }
+            }
+            /*
                 document.getElementById("value1").value = "";
                 document.getElementById("value2").value = "";
                 document.getElementById("operator").value = "";
                 document.getElementById("result").value = "";
             }
+            */
         </script>
     </head>
     <body>

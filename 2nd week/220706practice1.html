@@ -3,16 +3,27 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
         <script>
-            
+            function apple (){
+                $("img").attr("src","/Users/user/Desktop/github/SeSAC4_web/img/apple.jpeg");
+            }
+            function banana (){
+                $("img").attr("src","/Users/user/Desktop/github/SeSAC4_web/img/banana.jpeg");
+            }
+            function grape (){
+                $("img").attr("src","/Users/user/Desktop/github/SeSAC4_web/img/grape.jpeg");
+            }
+            function peach (){
+                $("img").attr("src","/Users/user/Desktop/github/SeSAC4_web/img/peach.jpeg");
+            }
         </script>
         
     </head>
 
     <body>
-        <div></div>
-        <button type="button" onclick="change('apple');">사과</button>
-        <button type="button" onclick="change('banana');">바나나</button>
-        <button type="button" onclick="change('grape');">포도</button>
-        <button type="button" onclick="change('peach');">복숭아</button>
+        <img width="500px" height="500px"><br>
+        <button type="button" onclick="apple();">사과</button>
+        <button type="button" onclick="banana();">바나나</button>
+        <button type="button" onclick="grape();">포도</button>
+        <button type="button" onclick="peach();">복숭아</button>
     </body>
 </html>

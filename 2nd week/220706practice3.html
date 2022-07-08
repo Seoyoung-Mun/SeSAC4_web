@@ -17,8 +17,8 @@
         </script>
     </head>
     <body>
-        <p>날짜 : <input type="number" id="day"></p>
-        <p>내용 : <input type="text" id="memo"></p>
+        <p>날짜 : <input type="number" id="date"></p>
+        <p>내용 : <input type="text" id="content"></p>
         <button type="button" onclick="enter">작성</button>
         <table cellpadding="20">
             <tr>
@@ -85,5 +85,24 @@
                 <td id="sat"></td>
             </tr>
         </table>
+
+        <script>
+            var target;
+
+            $("td").on("click", function( obj ){
+                console.log( obj );
+                target = obj.currentTarget; //현재 선택한 target
+                console.log( target );
+                $("#date").val($(obj.currentTarget).text() );
+                // alert( $(obj.currentTarget).text() );
+            });
+
+            function writeScheduel(){
+                var content = $("#content").val();
+
+                $(target).append("<p>" + content + "</p>");
+            }
+
+        </script>
     </body>
 </html>

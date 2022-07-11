@@ -3,24 +3,28 @@
         <title>간단 계산기 만들기</title>
 
         <script>
-            var value1 = document.getElementById("value1").value;
-            var value2 = document.getElementById("value2").value;
-            var o = document.getElementById("oper").value;
-            var result = document.getElementById("val").value;
+            function calculat(){
+                var value1 = document.getElementById("value1").value;
+                var value2 = document.getElementById("value2").value;
+                var o = document.getElementById("oper").value;
+                var result = document.getElementById("val").value;
 
-            value1 = parseInt(value1);
-            value2 = parseInt(value2);
+                value1 = parseInt(value1);
+                value2 = parseInt(value2);
 
-            if (o == "+"){
-                value1 + value2 == result
-            } else if(o == "-"){
-                value1 - value2 == result
-            } else if( o == "/"){
-                value1 / value2 == result
-            } else if( o == "*"){
-                value1 * value2 == result
+                if (o == "+"){
+                    result = value1 + value2;
+                } else if(o == "-"){
+                    result = value1 - value2;
+                } else if( o == "/"){
+                    result = value1 / value2;
+                } else if( o == "*"){
+                    result = value1 * value2;
+                }
+                document.getElementById("val").value = result;
+
             }
-            function c
+            
         
         </script>
     </head>

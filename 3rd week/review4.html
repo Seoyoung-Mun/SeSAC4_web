@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>간단 계산기 만들기</title>
+
+        <script>
+            var value1 = document.getElementById("value1").value;
+            var value2 = document.getElementById("value2").value;
+            var o = document.getElementById("oper").value;
+            var result = document.getElementById("val").value;
+
+            value1 = parseInt(value1);
+            value2 = parseInt(value2);
+
+            if (o == "+"){
+                value1 + value2 == result
+            } else if(o == "-"){
+                value1 - value2 == result
+            } else if( o == "/"){
+                value1 / value2 == result
+            } else if( o == "*"){
+                value1 * value2 == result
+            }
+            function c
+        
+        </script>
+    </head>
+    <body>
+        값1 : <input type="number" id="value1"> <br>
+        값2 : <input type="number" id="value2"> <br>
+        연산자 : <input type="text" id="oper"> <br>
+        결과 : <input type="number" id="val"> <br>
+
+        <button type="button" onclick="calculat();">계산하기</button>
+        <button type="button" onclick="reset();">초기화</button>
+    </body>
+</html>

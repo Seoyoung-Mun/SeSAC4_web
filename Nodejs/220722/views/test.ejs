@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>EJS TEST</title>
+    </head>
+    <body>
+        <p>
+            <%=a%>
+        </p>
+        <!--
+        for (var i = 0; i < 5; i++ ){
+            if (i == 3) {
+                h3태그
+            } else {
+                h1태그
+            }
+        }
+        -->
+        <% for (var i = 0; i < list.length; i++) { %>
+
+                <h3><%=list[i]%></h3>
+
+        <% } %> 
+        <!-- 줄 바꿈 할때마다 %>로 닫아주어야 한다. -->
+
+        <% var a = 'hello';%>
+        <p><%=a%></p> 
+        <!-- '='을 써주지 않으면 출력되지 않음 -->
+
+        <%- include('test2.ejs') %>
+
+    </body>
+</html>

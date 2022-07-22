@@ -17,6 +17,7 @@ const server = http.createServer( function (req, res){
             res.end(data);
         }
     });
+});
 //     try{
 //         const data = fs. readFile('./220630grass.html');
 //         res.writeHead(200);

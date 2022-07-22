@@ -19,7 +19,7 @@
 // //속성을 클래스로 보낼 수 있다.
 
 class Car {
-    constructor(){
+    constructor(color){
         this.color = color;
         this.isWheel = true;
         this.isDoor = true;

@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Index.ejs</title>
+    </head>
+
+    <body>
+        <form action="receive2" method="POST">
+            <fieldset>
+                <legend>인적사항</legend>
+                <label>
+                    이름 
+                <input type="text" name="name" placeholder="이름">
+                </label> <br>
+                    성별 
+                <input type="radio" name="gender" id="gender_1" value="남">
+                <label for="gender_1">남</label>
+                <input type="radio" name="gender" id="gender_2" value="여">
+                <label for="gender_2">여</label> <br>
+
+                    생년월일
+                <select name="year">
+                    <% for (var y = 1950; y < 2023; y++ ) {%>
+                        <option value="<%=y%>년"><%=y%>년</option>
+                    <%}%> 
+                </select>
+                <select name="month">
+                    <% for (var m = 1; m < 13; m++ ) {%>
+                        <option value="<%=m%>월"><%=m%>월</option>
+                    <%}%> 
+                </select>
+                <select name="day">
+                    <% for (var d = 1; d < 32; d++ ) {%>
+                        <option value="<%=d%>일"><%=d%>일</option>
+                    <%}%> 
+                </select> 
+            </fieldset> <br>
+
+            <fieldset>
+                관심사
+            <input type="checkbox" name="interest" value="travle">여행
+            <input type="checkbox" name="interest" value="fashion">패션
+            <input type="checkbox" name="interest" value="food">음식 
+            <br>
+                수업 시간
+            <input type="time" name="time">
+            <br>
+                수업 만족도
+            <input type="range" name="range">
+            </fieldset> <br>  
+            <button>회원가입</button>
+        </form>
+    </body>
+</html>

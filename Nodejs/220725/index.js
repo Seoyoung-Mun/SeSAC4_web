@@ -28,7 +28,7 @@ app.post("/receive", function(req,res){
     // console.log( req.body );
     
     // res.render("receive", req.body);  //views폴더 안에 receive.ejs 
-    
+    //render = view를 보여줌
 
 });
 

@@ -24,6 +24,7 @@ app.get("/receive", function (req,res) {
     res.send({name:name, message: msg});
 })
 app.post("/receive", function (req,res) {
+    console.log("receive-post");
     console.log( req.body );
     let name = req.body.name;
     let msg = req.body.name + " 안녕 ";

@@ -14,13 +14,13 @@ app.get("/", function(req,res){
     res.render("login");
 });
 
-app.get("/receive", function(req,res){
+app.get("/", function(req,res){
     console.log("receive-get"); 
     res.render("login");
 
 });
 
-app.post("/receive2", function(req,res){ 
+app.post("/", function(req,res){ 
     console.log("receive-post");
     console.log( req.body );
 
@@ -30,13 +30,16 @@ app.post("/receive2", function(req,res){
     console.log(strArray[0],strArray[1],strArray[2]);
     
     
-    let ID = req.body.ID
-    let password = req.body.password
+    let ID = req.body.ID;
+    let password = req.body.password;
+
+    let success = strArray[0]+"님 로그인 성공";
+    let fail = "아이디 혹은 비밀번호를 확인 해 주세요";
     
     if ( strArray[1] == ID && strArray[2] == password ){
-        res.send({message: "성공"});
+        res.send({ message: success });
     } else 
-        res.send({message: "실패"});
+        res.send({ message: fail });
 });
 
 

@@ -14,7 +14,7 @@
                     }
                 })
                 .then(( a )=>{ return a.data;}) //promise then에서 return하면 다음 then으로 넘어간다.
-                .then((d) => {
+                .then(( d ) => {
                     alert( d.message );
                 });
             }
@@ -27,8 +27,11 @@
                         name: "post codee"
                     }
                 })
-                .then(( a )=>{ return a.data;}) //promise then에서 return하면 다음 then으로 넘어간다.
-                .then((d) => {
+                .then(( a )=>{ 
+                    console.log( a );
+                    return a.data;}) //promise then에서 return하면 다음 then으로 넘어간다.
+                .then(( d ) => {
+                    console.log( d );
                     alert( d.message );
                 });
             }
@@ -43,20 +46,24 @@
 
                     return false;
                 }
-                // console.log( form.name.value );
-                // console.log( form.age.value ); //form의 name값을 불러올때
+                console.log( form.name.value );
+                console.log( form.age.value ); //form의 name값을 불러올때
 
-                // axios({
-                //     method: "post",
-                //     url: "http://localhost:8080/receive",
-                //     data: {
-                //         name: form.name.value
-                //     }
-                // })
-                // .then(( a )=>{ return a.data;}) //promise then에서 return하면 다음 then으로 넘어간다.
-                // .then(( d ) => {
-                //     alert( d.message );
-                // });
+                axios({
+                    method: "post",
+                    url: "http://localhost:8080/receive",
+                    data: {
+                        name: form.name.value,
+                        age:  form.age.value
+                    }
+                })
+                .then(( a )=>{ 
+                    console.log( a );
+                    return a.data;}) //promise then에서 return하면 다음 then으로 넘어간다.
+                .then(( d ) => {
+                    console.log( d );
+                    alert( d.message );
+                });
             }
             
         </script>

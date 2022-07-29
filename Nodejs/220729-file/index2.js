@@ -40,6 +40,8 @@ app.post("/upload", upload.single('userfile'), function(req,res){
     //위에 이거 다 아니었음..
 
     res.render("img", { filename: req.file.filename});
+    //render로 데이터를 send할 수 있다. (,입력후 전송할 데이터를 문자열방식으로)
+    //line22의 static(정적변수)을 지정해 줘야 함
 });
 
 

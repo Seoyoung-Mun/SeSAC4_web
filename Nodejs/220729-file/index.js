@@ -4,6 +4,7 @@ const port = 8080;
 const bodyParser = require("body-parser");
 const path = require( "path" );
 const multer = require( "multer" );
+const { read } = require("fs");
 const upload = multer({
     // dest: "uploads/", //경로(폴더)를 정해주는 과정(파일이 어느곳으로)
     storage: multer.diskStorage({
@@ -18,6 +19,17 @@ const upload = multer({
     limits: {filesSize: 5*1024*1024 },
 });
 
+function test(req, res, next){
+    console.log( "여기는 test 함수입니다.");
+    console.log( req.path );
+    req.aaa 
+    next();
+}
+function test2(req, res, next){
+    console.log( "여기는 test2 함수입니다.");
+    req.aaa
+    next();
+}
 app.set("view engine","ejs");
 app.use( express.static( "public" ) );
 app.use( express.urlencoded({extended: true }));
@@ -44,16 +56,6 @@ app.post("/upload/fields", upload.fields([{name:'userfile'},{name:'userfile2'},{
     console.log(req.file);
     res.send("Upload");
 });
-function test(req, res, next){
-    console.log( "여기는 test 함수입니다.");
-    console.log( req.path );
-    next();
-}
-function test2(req, res, next){
-    console.log( "여기는 test2 함수입니다.");
-
-    next();
-}
 
 
 app.listen(port, ()=>{

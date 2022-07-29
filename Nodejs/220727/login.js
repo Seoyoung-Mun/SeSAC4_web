@@ -20,9 +20,10 @@ app.get("/", function(req,res){
 
 });
 
-app.post("/", function(req,res){ 
+app.post("/receive", function(req,res){ 
     console.log("receive-post");
     console.log( req.body );
+
 
     let string = fs.readFileSync("../220725/info.txt").toString();
     console.log(string);
@@ -33,13 +34,14 @@ app.post("/", function(req,res){
     let ID = req.body.ID;
     let password = req.body.password;
 
-    let success = strArray[0]+"님 로그인 성공";
-    let fail = "아이디 혹은 비밀번호를 확인 해 주세요";
+    // let success = strArray[1]+"님 로그인 성공";
+    // let fail = "로그인 실패! ";
+    // let check = "아이디 혹은 비밀번호를 확인 해 주세요";
     
     if ( strArray[1] == ID && strArray[2] == password ){
-        res.send({ message: success });
+        res.send({ message: "success" });
     } else 
-        res.send({ message: fail });
+        res.send({ message: "fail" });
 });
 
 

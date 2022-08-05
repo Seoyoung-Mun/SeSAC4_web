@@ -2,7 +2,7 @@ const fs = require("fs").promises;
 
 exports.post_user = function( data ){
     const {ID, name, password, gender, email } = data;
-    fs.appendFile("./info.txt", `\n${ID}//${name}//${password}//${gender}//${email}`) ;
+    fs.appendFile("./info.txt", `${ID}//${name}//${password}//${gender}//${email}\n`) ;
 }
 
 exports.get_user = async function(){

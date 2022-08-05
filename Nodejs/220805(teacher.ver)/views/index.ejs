@@ -15,7 +15,7 @@
                         comment: form.comment.value
                     }
                 })
-                .then((rep) => { return req.data })
+                .then((rep) => { return rep.data })
                 .then((data)=> {
                     // data = {id : 3 }
                     let html =

@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>방명록</title>
+        <script>
+            function enter () {
+                
+
+            }
+        </script>
+    </head>
+    <body>
+        <form action="/" method="get">
+            <fieldset>
+                <legend>방명록 등록</legend>
+                <input type="text" name="name" value="이름"></input> <br>
+                <input type="text" name="content" value="방명록"></input> <br>
+                <button type="button" onclick="enter();">등록</button>
+            </fieldset>
+        </form>
+
+        <table id="maintable" border="1px">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>작성자</td>
+                    <td>방명록</td>
+                    <td>수정</td>
+                    <td>삭제</td>
+                </tr>
+            </thead>
+        </table>
+    </body>
+</html>

@@ -1,15 +1,30 @@
 const Member = require('../model/Member');
 
-exports.get_members = (req, res) => {
-    Member.get_members(function(result){
-        res.render('signup', {data: result});
-    })
+exports.get_main = ( req, res ) => {
+    res.render('main');
+    };
+
+exports.signup = ( req, res ) => {
+    res.render('signup');
 }
 
 exports.post_signup = ( req, res ) => {
-    console.log("req.body : "+ req.body );
     Member.insert(req.body.id, req.body.pw, req.body.name,req.body.gender, req.body.birthday, function(result){
         res.send("회원가입 성공!");
     });
-    
+}
+
+exports.login = ( req, res ) => {
+    res.render('login');
+}
+
+exports.post_login = ( req, res ) => {
+    Member.post_login(req.body.id, req.body.pw, function(result){
+        if("여기부터 다시해보자 서영아~!" ){
+            console.log(result.value);
+            res.send("login 성공");
+        } else{
+        res.send("login 실패");
+        }
+    })
 }

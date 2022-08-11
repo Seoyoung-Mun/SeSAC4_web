@@ -9,10 +9,10 @@
 
         <script>
             function signup(){
-                var form = document.getElementById('form_info');
+                var form = document.getElementById('form_signup');
                 axios({
                     method: 'post',
-                    url: 'http://localhost:8080/member/signup',
+                    url: 'http://localhost:8080/signup',
                     data: {
                         id : form.id.value,
                         pw : form.pw.value,
@@ -30,7 +30,7 @@
     <body>  
         <div class="h-1 row align-items-center">
             <h1>회원가입</h1>
-            <form ID="form_info">
+            <form ID="form_signup">
                     <div class="col-md-6">
                         <label for="inputID" class="form-label">아이디</label>
                         <input type="text" name="id" class="form-control" required>

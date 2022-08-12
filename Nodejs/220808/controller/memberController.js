@@ -20,11 +20,10 @@ exports.login = ( req, res ) => {
 
 exports.post_login = ( req, res ) => {
     Member.post_login(req.body.id, req.body.pw, function(result){
-        if("여기부터 다시해보자 서영아~!" ){
-            console.log(result.value);
-            res.send("login 성공");
+        if(result.length == 0 ){
+            res.send("login 실패");
         } else{
-        res.send("login 실패");
+            res.send("login 성공");
         }
     })
 }

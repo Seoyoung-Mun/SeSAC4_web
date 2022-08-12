@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <script>
+            console.log( document.cookie );
+            document.cookie = "user=sesac; expires=sat, 13 Aug 2022 13:00:00 GMT; path=/";
+            //만료일을 이런 형태로 명확하게 지정해 주어야 함, 여러개 옵션을 적을때 ;세미콜론으로 구분
+            console.log( document.cookie );
+            
+            var cookieArr = document.cookie.split(';');
+            //for ( var i = 0; i < cookieArr.length; i++ ) 아래 for문과 동일함
+            for (var i in cookieArr ){
+                console.log ( cookieArr[i] );
+            }
+        </script>
+    </head>
+</html>

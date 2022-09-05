@@ -1,0 +1,66 @@
+.box{
+    margin-bottom: 100px;
+}
+
+.px{
+    width: 500px;
+    height: 500px;
+    background-color: orange;
+}
+
+.pct-parent{
+    width: 500px;
+    height: 500px;
+    background-color: olive
+}
+
+.pct-child{
+    width: 50%; /* 부모의 50% */
+    height: 50%;
+    background-color: orchid;
+}
+
+.em{
+    font-size: 2em;  /*상위요소에 대하여 중첩이 되기 때문에 사용에 주의해야한다*/
+}
+
+.case1 {
+    font-size: 20px;
+}
+.case2 {
+    font-size: 10px;
+}
+.em-3 {
+    font-size: 3em;
+}
+
+.rem {
+    font-size: 2rem; /*중첩에 상관없이 2배*/
+}
+
+.vw { /* 브라우저의 가로 크기에 따라 */
+    height: 20vw;
+    width: 20vw;
+    background-color: coral;
+}
+
+.vh { /* 브라우저의 세로 크기에 따라 */
+    height: 20vh;
+    width: 20vh;
+    background-color: skyblue;
+}
+
+.test {
+    font-size: 30px; /*글씨 크기도 적용가능*/
+}
+
+@media screen and (min-width: 768px) {
+    .px {
+        width: 900px;
+        height: 900px;
+        background-color: pink;
+    }
+    .test {
+        font-size: 10vw; /*글씨 크기도 적용가능*/
+    }
+}

@@ -1,0 +1,150 @@
+﻿
+모듈을 설치할 때 nmp ~쓰면 됨
+
+
+모듈 관리는 n ~ 입력
+
+
+npm cache clean -f
+
+
+n stable
+
+
+node -v(16버전으로 바뀌어 있어야 함. 안바뀌어 있다면 한번 껐다가 키기)
+
+
+var/www/html은 포트를 안적었을 때; 80번 포트라는 기본 경로를 정했을 때 사용하는 폴더
+
+따라서. 포트를 따로 적어주었다면 var/www/html이 폴더에 구지 넣어주지 않아도 됨.
+
+
+putty로 원격으로 폴더 만들어주기
+
+
+sudo 명령어: 최상위 관리자가 아님에도 최상위 권한을 가져와서 쓰는 것; 관리자 권한을 가져온다.
+
+
+sudo mkdir Node.js: root 관리자 권한을 만들고 mkdir을 한다 / filezilla에서 폴더에서 왼쪽버튼 클릭해서 바로 만들어도 됨
+
+
+폴더에 js파일이랑 html 파일 같이 넣어주기
+
+
+cd /Node.js
+
+
+node 0721_practice.js___접속 안됨? why 로컬 호스트는 모든 포트에 열려 있지만 서버는 사용하려는 포트를 열어주어야 함.
+
+
+ACG에 포트 추가해주어야 함.
+
+
+//
+
+login as: root
+
+root@49.50.163.165's password:
+
+Welcome to Ubuntu 18.04.6 LTS (GNU/Linux 4.15.0-118-generic x86_64)
+
+
+* Documentation: https://help.ubuntu.com
+
+* Management: https://landscape.canonical.com
+
+* Support: https://ubuntu.com/advantage
+
+
+System information as of Fri Jul 22 13:11:12 KST 2022
+
+
+System load: 0.15 Processes: 102
+
+Usage of /: 7.7% of 48.96GB Users logged in: 0
+
+Memory usage: 21% IP address for eth0: 10.41.49.109
+
+Swap usage: 0%
+
+
+* Super-optimized for small spaces - read how we shrank the memory
+
+footprint of MicroK8s to make it the smallest full K8s around.
+
+
+https://ubuntu.com/blog/microk8s-memory-optimisation
+
+
+0 updates can be applied immediately.
+
+
+New release '20.04.4 LTS' available.
+
+Run 'do-release-upgrade' to upgrade to it.
+
+
+
+*** System restart required ***
+
+Last login: Fri Jul 22 13:06:02 2022 from 112.172.128.88
+
+root@ssac4:~# npm cache clean -f
+
+npm WARN using --force Recommended protections disabled.
+
+root@ssac4:~# n stable
+
+copying : node/16.16.0
+
+installed : v16.16.0 (with npm 8.11.0)
+
+root@ssac4:~# node -v
+
+v16.16.0
+
+root@ssac4:~#
+
+root@ssac4:~# cd /Node.js
+
+root@ssac4:/Node.js# ls
+
+0721_practice.js
+
+root@ssac4:/Node.js# node 0721_practice.js
+
+8080번 포트
+
+/ ____ 이 슬래시로는 html파일을 읽어옴
+
+Client Request
+
+Client Connection
+
+/grass.png ____ 이 부분으로는 png파일을 읽어옴
+
+Client Request
+
+/favicon.ico
+
+Client Request
+
+
+서버 끄기 : ctrl + c //실행시키는 js파일이 바뀌었을 때는 node 서버를 한번 껐다가 켜야 함.
+
+*백앤드 코드를 바꾸면 서버를 껐다가 켜야 함. 무조건~
+
+//
+
+
+npm init --yes를 입력하면 한번에 자동으로 입력시켜 줌
+
+
+
+
+**집에서는 git pull 받고
+
+npm install로 작업 해주면 됨
+
+
+﻿

@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
+    </head>
+    <style>
+        .chat-list {
+            background-color: skyblue;
+            width: 50%;
+            height: 50%;
+            padding: 10px;
+        }
+        .mine {
+            text-align: right;
+        }
+        .yours {
+            text-align: left;
+        }
+    </style>
+    <body>
+        <div id="chat-list" class="chat-list">
+        </div>
+        <input type="text" id="message">
+        <button type="button" onclick="send();">전송</button>
+        
+        <script>
+            var socket = io.connect();
+
+            var whoSend = false;
+            function send(){
+                let msg = document.getElementById("message").value;
+                socket.emit("send",msg);
+                whoSend = true;
+            }
+
+            socket.on("newMessage", function(msg){
+                let chat_list = document.getElementById("chat-list");
+
+                if (whoSend == false){
+                let div = document.createElement("div");
+                div.classList.add("yours");
+                //<div></div>
+                div.textContent = msg;
+                chat_list.appendChild(div); //appendChild 덮어쓰기
+                } else {
+                let div = document.createElement("div");
+                div.classList.add("mine");
+                div.textContent = msg;
+                chat_list.appendChild(div); //appendChild 덮어쓰기
+                };
+
+                
+                // div.style.textAlign = "left";
+
+            });
+
+        </script>
+
+    </body>
+</html>

@@ -4,8 +4,10 @@ var app = express();
 var http = require("http").Server(app);
 var io = require("socket.io")(http);
 
+//css 불러올 고정 폴더
+app.use(express.static('public'));
 app.get("/", function(req,res){
-    res.sendFile( __dirname + "/practice2_teacher.html");
+    res.sendFile( __dirname + "/chat.html");
 });
 // io -> 클라이언트와의 모든 연결을 갖고있음.
 // socket -> 클라이언트 하나 . socket.id 클라이언트를 구분하는 식별자
@@ -28,6 +30,7 @@ io.on("connection", function(socket){
             io.emit("newMessage", data);
         } else {
             data["is_dm"] = true;
+
             let socketID = Object.keys(list).find( (key) => { return list[key] === data.to; } );
             io.to(socketID).emit("newMessage", data);
             socket.emit("newMessage", data);
@@ -37,7 +40,6 @@ io.on("connection", function(socket){
     socket.on("disconnect", function(){
         io.emit("notice", list[socket.id] + "님이 퇴장하셨습니다.");
         delete list[socket.id];
-        io.emit("list",list);
     })
 });
 

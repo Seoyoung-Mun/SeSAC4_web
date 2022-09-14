@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title>Chat Room</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
+    <!-- <link rel="stylesheet" type="text/html" href="../css/chat.css"> -->
+    <link rel="stylesheet" href="/css/chat.css">
+</head>
+<body>
+    <div class="chat-body">
+        <div class="header"></div>
+        <div id="chat-list" class="chat-list"></div>
+        <div class="input-chat">
+            <select id="nick-list">
+                <option value="전체">전체</option>
+            </select>
+            <input type="text" id="message">
+            <button type="button" onclick="send();">전송</button>
+        </div>
+    </div>
+
+    <script>
+        var nickname = prompt("닉네임을 입력해주세요.");
+        var socket = io.connect();
+        socket.emit("info2", {nickname: nickname});
+        // socket.on("info", function(data){ id = data; });
+        // enterUser();
+
+        function send(){
+            let msg = document.getElementById("message").value;
+            let nick = document.getElementById("nick-list").value;
+            // socket.emit("send", {id, msg});
+            socket.emit("send", { msg : msg , to : nick } );
+            document.getElementById("message").value = "";
+        }
+
+        socket.on("newMessage", function(data){
+            // 넘어온 data = {id : ~~, msg : ~~~ }
+            let chat_list = document.getElementById("chat-list");
+            let div = document.createElement("div"); //<div></div>
+            let div_chat = document.createElement("div");//<div></div>
+            let span = document.createElement("span");
+
+            div_chat.textContent = data.msg; // <div>{msg}</div>
+            if ( data.is_dm ) div_chat.textContent = "(DM)" + div_chat.textContent;
+            // 넘어온 닉네임과 내 닉네임이 동일할 때
+            if (data.nickname == nickname) {div.classList.add("my-chat");
+            } else {
+                span.textContent = data.nickname;
+                div.appendChild(span);
+                div.classList.add("other-chat");
+            };
+
+            // 선언해준 변수들을 작동시켜야죠! 해볼까요?
+            div.appendChild(div_chat);
+            chat_list.appendChild(div); //appendChild 덮어쓰기
+        });
+
+        socket.on("notice", function(data){
+            let chat_list = document.getElementById("chat-list");
+            let div = document.createElement("div");
+
+            div.textContent = data;
+            div.classList.add("notice");
+            chat_list.appendChild(div);
+        });
+
+        socket.on("list", function(list){
+            // list = {id~~ : nickname, id~~ : nickname};
+            let nick_list = document.getElementById("nick-list");
+            while ( nick_list.firstChild ){
+                nick_list.removeChild(nick_list.lastChild);
+            }
+            let option = document.createElement("option");
+            option.text = "전체";
+            option.value = "전체";
+            nick_list.appendChild(option);
+
+            for ( let [key, value] of Object.entries(list) ){
+                let option = document.createElement("option");
+            option.text = value;
+            option.value = value;
+            nick_list.appendChild( option );
+            }
+
+        });
+    </script>
+</body>
+</html>

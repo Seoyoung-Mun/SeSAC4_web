@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+}
+
+.chat-body {
+    display: grid;
+    grid-template-columns: minmax(3.125rem, auto) 6.25rem;
+    grid-template-rows: 2.5rem 2.5rem auto;
+    align-items: stretch;
+    grid-template-areas: 
+        "header      header "
+        "other-chat  my-chat"
+        "  .            .   "
+        "input         input"
+}
+.header {
+    grid-area: header;
+}
+
+.chat-list { background-color: skyblue;
+    width: 50%; height: 100%;
+    padding: 10px;
+}
+.notice { 
+    text-align: center; 
+    color: gray;
+}
+.chat-list div div {
+    display: inline-block;
+    padding: 3px;
+    margin-top:5px;}
+.my-chat {
+    text-align: right;
+}
+.my-chat div {
+    grid-area: my-chat;
+    background-color: yellow; 
+    border-radius: 5px;
+}
+.other-chat div {
+    grid-area: other-chat;
+    background-color: white; 
+    text-align: left; 
+    border-radius: 5px;
+    padding-left: 20px;
+}
+span {
+    display: inline-block;
+    width: 40px; height: 25.5px;
+    margin-right: 5px;
+    text-align: center;
+}
+.input-chat {
+    grid-area: input;
+}

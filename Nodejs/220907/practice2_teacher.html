@@ -122,7 +122,7 @@
 
                 // 선언해준 변수들을 작동시켜야죠! 해볼까요?
                 div.appendChild(div_chat);
-                chat_list.appendChild(div); //appendChild 덮어쓰기
+                chat_list.appendChild(div); //appendChild 덮어쓰기아니고 마지막요소에 추가
             });
 
             socket.on("notice", function(data){

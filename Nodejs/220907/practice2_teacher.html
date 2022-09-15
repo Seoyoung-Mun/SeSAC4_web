@@ -6,7 +6,7 @@
             .chat-list { 
                 background-color: skyblue;
                 width: 50%; height: 50%;
-                overflow-y: scroll;
+                overflow-y: scroll; /*div안에 스크롤이 생겼다~!*/
                 padding: 10px;
             }
             .notice { 
@@ -104,7 +104,7 @@
             }
 
             socket.on("newMessage", function(data){
-                // 넘어온 data = {id : ~~, msg : ~~~ }
+                // 넘어온 data = {mag :~~~ , to :~~~, is_dm : false, nickname : ~~~}
                 let chat_list = document.getElementById("chat-list");
                 let div = document.createElement("div"); //<div></div>
                 let div_chat = document.createElement("div");//<div></div>

@@ -8,8 +8,9 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
-  {/* 숫자를 중괄호.. 놓쳤다 */}
-    {/* 태그 사이에 문자를 children으로 보낼 수 있다 */}
+  {/* 숫자를 쓸때 중괄호{}안에 넣어줘야한다  */}
+    <ClassComponent name={1} location="문래"> 문래 </ClassComponent>
+    {/* 태그 사이에 문자를 props.children으로 보낼 수 있다 */}
     <App />
   </>
 );

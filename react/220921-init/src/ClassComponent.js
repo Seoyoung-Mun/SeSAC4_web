@@ -21,11 +21,12 @@ class ClassComponent extends Component {
 
 // 함수형
 // function ClassComponent (props){
+//     const {name, location} = props;
 //     return (
 //         <div>
 //             {props.children}
 //             <h2>ClassComponent -function</h2>
-//             <h5>name : {props.name}</h5>
+//             <h5>name : {name}</h5>
 //             <h5>location : {props.location}</h5> 
 //             {/* 부모가 전달한? name,location props.name/props.location */}
 //             {/* 부모는 어디에있는가? 내가 ClassComponent태그를 지정한 그 위치에서 데이터를 전달하고 여기서 받는것임. */}

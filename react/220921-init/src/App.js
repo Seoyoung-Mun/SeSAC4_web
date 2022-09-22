@@ -31,7 +31,7 @@ function App() {
     return (
       <div className="test" style={{
         backgroundColor : "yellow",
-        colr : "blue"
+        color : "blue"
       }}>
         {name}
         { flag && (<h1>True</h1>)}

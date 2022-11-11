@@ -6,50 +6,62 @@ import java.util.ArrayList; //ArrayList 클래스 크기를 미리 정하지 않
 import java.util.InputMismatchException;
 
 public class Main {
-	public static int number() {
-		return 5;
-	}
-	public static String str() {
-		return "aaa";
-	}
-	public static void hello () {
-		System.out.println("hello");
-	}
-	public static double sum(double a, double b) {
-		return a + b;
-	}
+//	public static int number() {
+//		return 5;
+//	}
+//	public static String str() {
+//		return "aaa";
+//	}
+//	public static void hello () {
+//		System.out.println("hello");
+//	}
+//	public static double sum(double a, double b) {
+//		return a + b;
+//	}
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 //------------------------------------------------------------------------------------
-//		<>
-		Scanner scanner = new Scanner(System.in);
-		
-		ArrayList<Rectangle> rect = new ArrayList<>();
-		//Rectangle클래스 이름 
-	
-		while(true) {
-			System.out.println("사각형의 가로와 세로 길이를 띄어쓰기 기준으로 입력해주세요.");
-			double width = scanner.nextDouble();
-			double height = scanner.nextDouble();
-//			int COUNT = COUNT+1;
 
-			if( width == 0 && height == 0) break;
-			
-			Rectangle rectangle = new Rectangle(width);
-			rectangle.setHeight(height);
-			
-			rect.add(rectangle);
-			
-		}
+	 
 		
-		for( Rectangle value : rect ) {
-			System.out.println("가로 길이는 : " + value.getWidth());
-			System.out.println("세로 길이는 : " + value.getHeight());
-			System.out.println("넓이는 : " + value.area());
-			System.out.println("------------------");
-		}	
-		System.out.println("Rectangle 인스천스의 개수는 : " + Rectangle.getCount());
+//------------------------------------------------------------------------------------
+//		<Person상속>
+//		Student stu = new Student (20, "코딩온");
+//		stu.setSchool("코딩온 대학교");
+//		stu.setAge(21);
+//		
+//		System.out.println(stu.getAge());
+//		System.out.println(stu.getSchool());
+		
+//------------------------------------------------------------------------------------
+////		<static 실습>
+//		Scanner scanner = new Scanner(System.in);
+//		
+//		ArrayList<Rectangle> rect = new ArrayList<>();
+//		//Rectangle클래스 이름 
+//	
+//		while(true) {
+//			System.out.println("사각형의 가로와 세로 길이를 띄어쓰기 기준으로 입력해주세요.");
+//			double width = scanner.nextDouble();
+//			double height = scanner.nextDouble();
+////			int COUNT = COUNT+1;
+//
+//			if( width == 0 && height == 0) break;
+//			
+//			Rectangle rectangle = new Rectangle(width);
+//			rectangle.setHeight(height);
+//			
+//			rect.add(rectangle);
+//			
+//		}
+//		
+//		for( Rectangle value : rect ) {
+//			System.out.println("가로 길이는 : " + value.getWidth());
+//			System.out.println("세로 길이는 : " + value.getHeight());
+//			System.out.println("넓이는 : " + value.area());
+//			System.out.println("------------------");
+//		}	
+//		System.out.println("Rectangle 인스천스의 개수는 : " + Rectangle.getCount());
 //------------------------------------------------------------------------------------
 //		<클래스실습upgrade>
 //		

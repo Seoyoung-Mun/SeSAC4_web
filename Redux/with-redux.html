@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.js"></script>
+    </head>
+    <body>
+        <style>
+            .container{
+                border: 2px solid black;
+                padding: 10px;
+                text-align: center;
+                margin-bottom: 3px;
+                width: 200px;
+            }
+        </style>
+
+        <div class="container" id="red">
+            <h1>red</h1>
+            <input type="button" value="실행" onclick="store.dispatch({type:'CHANGE', color:'red'});">
+        </div>
+        <div class="container" id="green">
+            <h1>green</h1>
+            <input type="button" value="실행" onclick="store.dispatch({type:'CHANGE', color:'green'});">
+        </div>
+        <div class="container" id="yellow">
+            <h1>yellow</h1>
+            <input type="button" value="실행" onclick="store.dispatch({type:'CHANGE', color:'yellow'});">
+        </div>
+        <div class="container" id="blue">
+            <h1>blue</h1>
+            <input type="button" value="실행" onclick="store.dispatch({type:'CHANGE', color:'blue'});">
+        </div>
+
+
+
+        <script>
+            function reducer(sate, action){
+                //state : 현재 상태 (변경되기 전)
+                //action : dispatch를 호출할 때 넣었던 객체
+                if(action.type === 'CHANGE'){return {color:action.color};}
+                
+            }
+            let store = Redux.createStore(reducer);
+            function changeAll(){
+                let state = store.getState();
+                document.querySelector('#red').style.backgroundColor = state.color;
+                document.querySelector('#green').style.backgroundColor = state.color;
+                document.querySelector('#yellow').style.backgroundColor = state.color;
+                document.querySelector('#blue').style.backgroundColor = state.color;
+            }
+            store.subscribe(changeAll);
+        </script>
+    </body>
+</html>

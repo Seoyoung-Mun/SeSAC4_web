@@ -1,0 +1,28 @@
+version: "3.8"
+
+# yml구은 탭 으로 구분
+services:
+  sesac-codingon:
+    volumes: 
+      - /app/node_modules
+      - ./:/app/
+      # : 를 기준으로 호스트경로:컨테이너경로
+    build: 
+      context: .
+      # .은 도커파일의 경로
+      # dockerfile : Dokckerfile22
+    ports:
+      - "8000:8000"
+      #포트번호를 적어주지 않으면 랜덤으로 지정되기 때문에 반드시 적어주어야 함.
+  node:
+    image: "node:16"
+    working_dir: /usr/src/app
+    volumes: 
+    # 내가 수정한 걸 바로 반영하기 위해 사용하는 거
+    # ./ : 내가 지금 수정하고 있는 경로
+    # /usr/src/app : 내가 수정한 걸 반영할 컨테이너 경로 ( working_dir )
+      - ./:/usr/src/app
+    ports:
+      - "8001:8000"
+    command: bash -c "npm install && node index"
+    #도커파일의 CMD와 비슷함. 윈도우에선 bash를 붙여서 써 주어야 함

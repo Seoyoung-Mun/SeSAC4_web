@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import {useSelector} from "react-redux";
 
-export type TDiary = {
+export type TDate = {
   id: number,
   date: string,
 }
 type RootState = {
-  dates: []
-  diaries: TDiary[]
+  dates: TDate[]
+  diaries: []
 }
 
 export default function DateList() {
@@ -20,7 +20,7 @@ export default function DateList() {
 
   return (
     <ul className="list_date">
-      {dates.map((date : TDiary) => (
+      {dates.map((date : TDate) => (
         <li key={date.id}>
           <Link to={`/date/${date.date}`}>{date.date}</Link>
         </li>
